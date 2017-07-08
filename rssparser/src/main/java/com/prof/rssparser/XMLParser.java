@@ -122,6 +122,11 @@ public class XMLParser extends Observable {
                        @SuppressWarnings("deprecation")
                        Date pubDate = new Date(xmlPullParser.nextText());
                        currentArticle.setPubDate(pubDate);
+                   } else if (xmlPullParser.getName().equalsIgnoreCase("dc:date")) {
+
+                       @SuppressWarnings("deprecation")
+                       Date pubDate = new Date(xmlPullParser.nextText());
+                       currentArticle.setPubDate(pubDate);
                    }
 
                } else if (eventType == XmlPullParser.END_TAG && xmlPullParser.getName().equalsIgnoreCase("item")) {
